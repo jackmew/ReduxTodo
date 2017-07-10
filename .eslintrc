@@ -1,0 +1,11 @@
+{
+    "extends": "rallycoding",
+    "rules":{
+        "global-require": 0, // require使用
+        "import/no-extraneous-dependencies": 0, // 用絕對路徑抓assets
+        "arrow-body-style": 0, // () => {} 常常會只是return JSX，他建議拿掉return
+        "max-len": 0, // 當寫太長時會出現紅線
+        "no-underscore-dangle" : 0, // _fn() 不允許開頭用_命名
+        "no-useless-constructor": 0 // constructor沒實際作用時，會出現紅線，但有時候放了覺得比較整齊
+    }
+}
