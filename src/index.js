@@ -69,7 +69,7 @@ const todoApp = combineReducers({
 
 // view
 let nextTodoId = 0;
-const AddTodo = (props, { store }) => {
+let AddTodo = ({ dispatch }) => {
     let input;
     return (
         <div>
@@ -80,7 +80,7 @@ const AddTodo = (props, { store }) => {
             />
             <button
                 onClick={() => {
-                    store.dispatch({
+                    dispatch({
                         type: 'ADD_TODO',
                         text: input.value,
                         id: nextTodoId++
@@ -93,9 +93,8 @@ const AddTodo = (props, { store }) => {
         </div>
     );
 };
-AddTodo.contextTypes = {
-    store: React.PropTypes.object
-};
+AddTodo = connect()(AddTodo);
+
 const Todo = ({ text, completed, onClick }) => {
     return (
         <li
